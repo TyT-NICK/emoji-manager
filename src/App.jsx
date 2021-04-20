@@ -1,30 +1,24 @@
 import React, { useEffect, useState } from 'react';
 
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Collection } from 'react-materialize';
-import useHttp from './Hooks/useHttp';
-import NavComponent from './components/NavComponent';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  Button, Collection, Navbar, SideNav,
+} from 'react-materialize';
+import useHttp from './hooks/useHttp';
 import './App.css';
+import Navigation from './components/Navigation';
+import useRoutes from './hooks/useRoutes';
+import Page from './pages/PageAll';
 
 function App() {
-  const [data, setData] = useState('');
-  const { loading, request } = useHttp();
+  const routes = useRoutes();
 
   return (
     <Router>
-      <Collection>
-        <NavComponent to="/asd" label="qeq" />
-        <NavComponent to="/asasd" label="qeq" />
-      </Collection>
-      <ul className="collection">
-        <a href="/" className="collection-item active">Alvin</a>
-        <a href="/asd" className="collection-item">Alvin</a>
-        <li className="collection-item">Alvin</li>
-        <li className="collection-item">Alvin</li>
-        <li className="collection-item">Alvin</li>
-      </ul>
-      {/* <div className="App">
-      </div> */}
+      {/* <Navbar />
+      <Navigation /> */}
+      <Page />
+      <Switch>{routes}</Switch>
     </Router>
   );
 }
