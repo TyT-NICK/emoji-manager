@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavButton } from './Navigation';
 
 const Header = (props) => {
   const { title } = props;
   return (
     <header>
-      <div id="mobile-nav-button" />
+      <NavButton />
       {title}
     </header>
   );

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { Icon, SideNav } from 'react-materialize';
 
@@ -20,32 +19,19 @@ const NavComponent = (props) => {
   );
 };
 
-const NavButton = () => {
-  const sideButton = document.createElement('div');
-
-  useEffect(() => {
-    const sideButtonArea = document.getElementById('mobile-nav-button');
-    sideButtonArea.appendChild(sideButton);
-  }, []);
-
-  const elem = (
-    <a
-      href="#!"
-      node="button"
-      waves="light"
-      data-target="side-nav"
-      className="hide-on-large-only sidenav-trigger top-nav"
-    >
-      <Icon left>
-        menu
-      </Icon>
-    </a>
-  );
-
-  return (
-    ReactDOM.createPortal(elem, sideButton)
-  );
-};
+export const NavButton = () => (
+  <a
+    href="#!"
+    node="button"
+    waves="light"
+    data-target="side-nav"
+    className="hide-on-large-only sidenav-trigger top-nav"
+  >
+    <Icon left>
+      menu
+    </Icon>
+  </a>
+);
 
 const Navigation = () => {
   const options = {
@@ -59,7 +45,7 @@ const Navigation = () => {
       id="side-nav"
       fixed
       options={options}
-      trigger={<NavButton />}
+      // trigger={<NavButton />}
     >
       <NavComponent to="/" label="Все" />
       <NavComponent to="/favorite" label="Любимые" />
