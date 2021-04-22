@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavButton } from './Navigation';
 
 const Header = (props) => {
   const { title } = props;
@@ -6,7 +7,7 @@ const Header = (props) => {
     <header>
       <nav>
         <div className="nav-wrapper">
-          <div id="mobile-nav-button" />
+          <NavButton />
           <a href="#!" className="brand-logo">{title}</a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>
