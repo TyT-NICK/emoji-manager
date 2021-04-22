@@ -12,7 +12,7 @@ const NavComponent = (props) => {
   });
 
   return (
-    <li className={`${match ? 'active' : ''}`}>
+    <li className={`${match ? 'active deep-purple lighten-4' : ''}`}>
       <Link className="waves-effect" to={to}>
         {label}
       </Link>
