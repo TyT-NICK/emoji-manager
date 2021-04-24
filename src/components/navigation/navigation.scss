@@ -1,0 +1,16 @@
+.sidenav-trigger {
+  color: var(--col-main) !important;
+}
+
+#sidenav li.active {
+  background: var(--col-accent) !important;
+}
+
+.sidenav li>a {
+  color: var(--col-main) !important;
+}
+
+.sidenav li.active>a {
+  color: var(--col-main) !important;
+}
+

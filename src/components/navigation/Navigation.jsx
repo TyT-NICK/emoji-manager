@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { Icon, SideNav } from 'react-materialize';
 
+import './navigation.scss';
+
 const NavComponent = (props) => {
   const { label, to } = props;
 
@@ -24,10 +26,10 @@ export const NavButton = () => (
     href="#!"
     node="button"
     waves="light"
-    data-target="side-nav"
+    data-target="sidenav"
     className="hide-on-large-only sidenav-trigger top-nav"
   >
-    <Icon left>
+    <Icon center large>
       menu
     </Icon>
   </a>
@@ -42,7 +44,7 @@ const Navigation = () => {
 
   return (
     <SideNav
-      id="side-nav"
+      id="sidenav"
       fixed
       options={options}
       // trigger={<NavButton />}
