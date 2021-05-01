@@ -8,7 +8,7 @@ const PageAll = () => {
   console.log(content);
 
   return (
-    <Page title="Все">
+    <Page title="Все" onSearch={(e) => console.log(e.target.value)}>
       {
       content.length
         ? content.map((x) => <p key={x.name}>{x.imgUrl}</p>)

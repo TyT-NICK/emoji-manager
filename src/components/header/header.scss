@@ -2,6 +2,13 @@
 //   margin: 0 15px 8px !important;
 // }
 
+header {
+  position: sticky;
+  z-index: 998 !important;
+  top: 0;
+  background: #fff;
+}
+
 .brand-logo {
   color: var(--col-main) !important
 }

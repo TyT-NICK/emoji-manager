@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PageAll from '../pages/PageAll';
+import PageFav from '../pages/PageFav';
+import PageDel from '../pages/PageDel';
 
 const useRoutes = () => (
   <>
@@ -8,18 +10,12 @@ const useRoutes = () => (
       <PageAll />
     </Route>
 
-    {/* <Route path="/favorite">
-      <Page title="Любимые">
-        л
-      </Page>
-
+    <Route path="/favorite">
+      <PageFav />
     </Route>
     <Route path="/deleted">
-      <Page title="Удаленные">
-        у
-      </Page>
-
-    </Route> */}
+      <PageDel />
+    </Route>
   </>
 );
 
