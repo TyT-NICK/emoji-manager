@@ -1,16 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Page from '../pages/Page';
+import PageAll from '../pages/PageAll';
 
 const useRoutes = () => (
   <>
     <Route exact path="/">
-      <Page title="Все">
-        в
-      </Page>
+      <PageAll />
     </Route>
 
-    <Route path="/favorite">
+    {/* <Route path="/favorite">
       <Page title="Любимые">
         л
       </Page>
@@ -21,7 +19,7 @@ const useRoutes = () => (
         у
       </Page>
 
-    </Route>
+    </Route> */}
   </>
 );
 

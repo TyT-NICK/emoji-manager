@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-export default function useHttp() {
+const useHttp = () => {
   const [loading, setLoading] = useState(false);
 
   const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
@@ -26,4 +26,6 @@ export default function useHttp() {
   });
 
   return { loading, request };
-}
+};
+
+export default useHttp;
