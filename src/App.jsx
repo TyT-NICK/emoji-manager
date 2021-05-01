@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.scss';
 import Navigation from './components/navigation/Navigation';
 import useRoutes from './hooks/useRoutes';
-import ContentReducer, { getItems } from './content';
+import ContentReducer, { initializeItems, ACTION_TYPES } from './reducers/contentReducer';
 import ContentContext from './contexts/contentContext';
 
-const storageName = 'items';
+const contentStorageName = 'STORED_ITEMS';
 
 function App() {
   const [reducer, initialState] = ContentReducer();
@@ -16,14 +16,14 @@ function App() {
   const routes = useRoutes();
 
   useEffect(async () => {
-    const items = await getItems();
-    dispatch({ type: 'items/init', payload: items });
+    const items = await initializeItems(contentStorageName);
+    dispatch({ type: ACTION_TYPES.INIT_ITEMS, payload: items });
   }, []);
 
   useEffect(() => {
     if (state.length) {
       console.log('content state updated');
-      localStorage.setItem(storageName, JSON.stringify(state));
+      localStorage.setItem(contentStorageName, JSON.stringify(state));
     }
   }, [state]);
 
