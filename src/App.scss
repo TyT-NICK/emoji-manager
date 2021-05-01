@@ -1,3 +1,9 @@
+* {
+  user-select: none;
+  --col-main: #263238;
+  --col-accent: #c5cae9;
+}
+
 header, main, footer {
   margin-left: 300px;
 }
